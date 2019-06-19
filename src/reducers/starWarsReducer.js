@@ -1,4 +1,6 @@
-import { FETCHING, SUCCESS, FAILURE } from '../actions';
+import { FETCHING } from '../actions';
+import { SUCCESS } from '../actions';
+import { FAILURE } from '../actions';
 
 const initialState = {
   characters: [],
@@ -8,8 +10,6 @@ const initialState = {
 };
 
 export const charsReducer = (state = initialState, action) => {
-  console.log(`starWarsReducer`, action);
-  console.log(`state from reducer`, state);
   // Fill me in with the important reducers
   // action types should be FETCHING, SUCCESS and FAILURE
   // your switch statement should handle all of these cases.
@@ -23,13 +23,14 @@ export const charsReducer = (state = initialState, action) => {
     case SUCCESS:
       return {
         ...state,
-        characters: action.payload,
+        characters: [...state.characters, action.payload],
+        error: '',
         isFetching: false
       };
     case FAILURE:
       return {
         ...state,
-        error: 'asd',
+        error: 'Error',
         isFetching: false
       };
     default:
