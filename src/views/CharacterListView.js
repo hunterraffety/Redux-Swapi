@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { CharacterList } from "../components";
+import { CharacterList } from '../components';
 // import actions
 
 class CharacterListView extends React.Component {
@@ -18,7 +18,7 @@ class CharacterListView extends React.Component {
       // return something here to indicate that you are fetching data
     }
     return (
-      <div className="CharactersList_wrapper">
+      <div className='CharactersList_wrapper'>
         <CharacterList characters={this.props.characters} />
       </div>
     );
