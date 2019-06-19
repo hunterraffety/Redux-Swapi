@@ -1,4 +1,8 @@
-import /* we need our action types here*/ '../actions';
+import {
+  FETCH_CHARACTERS_START,
+  FETCH_CHARACTERS_SUCCESS,
+  FETCH_CHARACTERS_ERROR
+} from '../actions';
 const initialState = {
   characters: [],
   // Array characters, Boolean fetching, null error.
@@ -7,7 +11,7 @@ const initialState = {
 };
 
 export const charsReducer = (state = initialState, action) => {
-  console.log('reducer', action);
+  console.log(`starWarsReducer`, action);
   switch (action.type) {
     case FETCH_CHARACTERS_START:
       return {
