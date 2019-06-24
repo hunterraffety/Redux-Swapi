@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Character = props => {
-  return <li>{props.character.name}</li>;
+  console.log(`character.js props`, props);
+  return <li>My good sirs, why not show up? ---> {props.character.name}</li>;
 };
 
 export default Character;
